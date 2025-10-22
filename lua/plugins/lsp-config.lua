@@ -30,7 +30,16 @@ return {
 
       lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
       lspconfig.omnisharp.setup({ capabilities = capabilities, on_attach = on_attach })
-      lspconfig.pylsp.setup({ capabilities = capabilities, on_attach = on_attach })
+      lspconfig.pylsp.setup({ capabilities = capabilities, on_attach = on_attach, settings = {
+                pylsp = {
+                    plugins = {
+                        pycodestyle = {
+                            ignore = { "E501", "E226" },
+                        },
+                    },
+                },
+            },
+        })
       lspconfig.emmet_ls.setup({ capabilities = capabilities, on_attach = on_attach })
       lspconfig.ts_ls.setup({ capabilities = capabilities, on_attach = on_attach })
     end,
