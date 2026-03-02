@@ -22,10 +22,6 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     }
 )
 
-local lspconfig = require("lspconfig")
-
-lspconfig.clangd.setup({})
-
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*.cpp,*.h",
     callback = function()

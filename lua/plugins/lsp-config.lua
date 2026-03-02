@@ -1,5 +1,12 @@
 return {
   {
+    "neovim/nvim-lspconfig",
+    config = function()
+      local lspconfig = require("lspconfig")
+      lspconfig.pyright.setup({})
+    end,
+  },
+  {
     "williamboman/mason.nvim",
     config = function()
       require("mason").setup()
